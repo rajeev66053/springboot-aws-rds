@@ -1,0 +1,8 @@
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      access-key: AKIASDHN4WTQVAP2I27C
+      secret-key: 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

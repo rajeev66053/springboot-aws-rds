@@ -61,3 +61,27 @@
 * choose a file and upload jar file.
 * click on deploy.
 * click on the link.
+
+### To store the credential in AWS secret Manager
+* Go to aws.amazon.com console and search for sercret manager.
+* click on store a new secret.
+* In our case we are using relational database so choose credentials for  Amazon RDS database.
+* Provide username and password.
+* Select encrytion key
+* Choose db instance as aws-rds that we have created.
+* Click on next.
+* Give the secret name. It my case it is aws-db-credential.
+* Click on next.
+* Click on next from configure rotation which is optional and it is used if we change password in future we don't need to modify in application.properties it will automatically handle changed password.
+* From review page copy the java code for secret manager.
+* Click on store.
+
+### To use aws secret manager 
+* Add dependency gson and secretsmanager.
+  Remove aws database credential from application.properties.
+* Create ApplicationConfig configuration file.
+* Create AwsSecrets class.
+* To get accesskey and secret key go to aws.amaozon.com console  click on your name on right top of the screen in aws.amaozon.com console and click on security credentials.
+* Click on access key then click on create access key and click on show access key.
+* Copy secret key and access key.
+* Create application.yml file and set aws access key and secret key there and use in ApplicationConfig class.
